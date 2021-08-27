@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Tutor Log In{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container loginform">
+        <form method="post">
+
+            <div class="input-container">
+                <input type="input" id="netid" name="netid" >
+                <label for="input">Net Id</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" name="password" >
+                <label for="input">Password</label>
+                <div class="bottom-line"></div>
+            </div>
+
+{#            <div class="form-group">#}
+{#                <label for="netid">netid</label>#}
+{#                <input class="form-control" id="netid" name="netid" placeholder="netid">#}
+{#            </div>#}
+{##}
+{#            <div class="form-group">#}
+{#                <label for="password">password</label>#}
+{#                <input type="password" class="form-control" id="password" name="password" placeholder="password">#}
+{#            </div>#}
+
+            <button type="submit" class="submit-button btn btn-default">Login as Tutor
+        </form>
+    </div>
+{% endblock %}

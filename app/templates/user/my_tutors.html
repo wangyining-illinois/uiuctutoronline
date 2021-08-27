@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">My Tutors</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Major</th>
+                        <th>Standing</th>
+                        <th>GPA</th>
+                        <th>State</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for tutor in tutors %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td><a href="{{ url_for("user.user_check_tutor", netid=tutor[0]) }}">{{ tutor[1] }}</a></td>
+                            <td>{{ tutor[2] }}</td>
+                            <td>{{ tutor[3] }}</td>
+                            <td>{{ tutor[4] }}</td>
+
+                            {% if tutor[5] == 0 %}
+                                <td class="bg-primary">Waiting for Reply</td>
+                            {% elif tutor[5] == 1 %}
+                                <td class="bg-success">Accepted</td>
+                            {% else %}
+                                <td class="bg-danger">Refused</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

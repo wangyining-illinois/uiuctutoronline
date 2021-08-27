@@ -1,0 +1,323 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {#    <h1>{% block title %}Welcome to 411 online tutor school{% endblock %}</h1>#}
+{% endblock %}
+
+{% block content %}
+
+    {% if g.type == 1 %}
+
+        <div class="index_login_pic">
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h1 style="text-align: center">Find your tutor!</h1>
+                <div class="row">
+                    <div class="col-xs-12 form-group">
+                        <form method="POST">
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <input type="input" id="course" name="course" placeholder="Try to input 'MATH347'">
+                                    <label for="input">Input a Course Name</label>
+                                    <div class="bottom-line"></div>
+                                </div>
+
+                                <div class="freetime_box">
+                                    <div style="width: 600px; margin: 0 auto;">
+                                        <label for="freetime">Choose your free time</label>
+                                        <div class="icheck-primary icheck-inline ">
+                                            <input type="checkbox" onclick="checkAll()" id="choo" class="time_input"/>
+                                            <label for="choo">Choose All</label>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline ">
+                                                <input type="checkbox" id="mon1" name="m1" value="1"
+                                                       class="time_input"/>
+                                                <label for="mon1">Monday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="mon2" name="m2" value="1"
+                                                       class="time_input"/>
+                                                <label for="mon2">Monday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="mon3" name="m3" value="1"
+                                                       class="time_input"/>
+                                                <label for="mon3">Monday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="tues1" name="t1" value="1"
+                                                       class="time_input"/>
+                                                <label for="tues1">Tuesday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="tues2" name="t2" value="1"
+                                                       class="time_input"/>
+                                                <label for="tues2">Tuesday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="tues3" name="t3" value="1"
+                                                       class="time_input"/>
+                                                <label for="tues3">Tuesday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="wed1" name="w1" value="1"
+                                                       class="time_input"/>
+                                                <label for="wed1">Wednesday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="wed2" name="w2" value="1"
+                                                       class="time_input"/>
+                                                <label for="wed2">Wednesday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="wed3" name="w3" value="1"
+                                                       class="time_input"/>
+                                                <label for="wed3">Wednesday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="Thur1" name="th1" value="1"
+                                                       class="time_input"/>
+                                                <label for="Thur1">Thursday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="Thur2" name="th2" value="1"
+                                                       class="time_input"/>
+                                                <label for="Thur2">Thursday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="Thur3" name="th3" value="1"
+                                                       class="time_input"/>
+                                                <label for="Thur3">Thursday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="fri1" name="f1" value="1"
+                                                       class="time_input"/>
+                                                <label for="fri1">Friday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="fri2" name="f2" value="1"
+                                                       class="time_input"/>
+                                                <label for="fri2">Friday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="fri3" name="f3" value="1"
+                                                       class="time_input"/>
+                                                <label for="fri3">Friday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="sat1" name="s1" value="1"
+                                                       class="time_input"/>
+                                                <label for="sat1">Saturday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="sat2" name="s2" value="1"
+                                                       class="time_input"/>
+                                                <label for="sat2">Saturday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="sat3" name="s3" value="1"
+                                                       class="time_input"/>
+                                                <label for="sat3">Saturday Evening</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="icheck-primary icheck-inline">
+                                                <input type="checkbox" id="sun1" name="su1" value="1"
+                                                       class="time_input"/>
+                                                <label for="sun1">Sunday Morning</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="sun2" name="su2" value="1"
+                                                       class="time_input"/>
+                                                <label for="sun2">Sunday Afternoon</label>
+                                            </div>
+
+                                            <div class="icheck-primary  icheck-inline ">
+                                                <input type="checkbox" id="sun3" name="su3" value="1"
+                                                       class="time_input"/>
+                                                <label for="sun3">Sunday Evening</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <script>
+
+                                    var all_check = false
+
+                                    function checkAll() {
+                                        if (!all_check) {
+                                            $(".time_input").prop("checked", true)
+                                        } else {
+                                            $(".time_input").prop("checked", false)
+                                        }
+                                        all_check = !all_check
+                                    }
+                                </script>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit-button btn-lg">Search Your Tutor!
+                            </button>
+                        </form>
+
+                        <div class="container" style="padding: 0 140px;">
+                            {% if not tutor_info %}
+                                <h3 style="text-align: center">Sorry, there are no suitable tutors for you.</h3>
+                            {% else %}
+                                <h3 style="text-align: center">Here are the tutors you find: </h3>
+                                {% for tutor in tutor_info %}
+                                    <div class="col-lg-3 thumbnail" style="margin: 30px; padding: 8px;">
+                                        <h2>{{ tutor[0][2] }}</h2>
+                                        <p>grade: {{ tutor[0][5] }}</p>
+                                        <p>gpa: {{ tutor[0][6] }}</p>
+                                        <p>selfInfo:{{ tutor[0][4] }} </p>
+                                        <p><a class="btn btn-primary"
+                                              href="{{ url_for("user.user_check_tutor", netid=tutor[0][1]) }}"
+                                              role="button">View
+                                            details
+                                            &raquo;</a>
+                                        </p>
+                                    </div><!--/.col-xs-6.col-lg-4-->
+                                {% endfor %}
+
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                </div><!--/row-->
+            </div><!--/.col-xs-12.col-sm-9-->
+
+            <div class="col-xs-6 col-sm-4 sidebar-offcanvas" id="sidebar" style="padding: 30px 55px;">
+                <div class="list-group">
+                    {#                    <a href="#" class="list-group-item">Want to be a Tutor</a>#}
+                    <a href="{{ url_for("user.user_show_states") }}" class="list-group-item">My Tutors</a>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Recommended Tutors for You
+                    </div>
+                    <div class="panel-body">
+                        <p>These are the most suitable tutors we recommend for you</p>
+                        {% for tutor in recommend_tutor %}
+                            <div class="">
+                                <h2>{{ tutor[1] }}</h2>
+                                <p>Major: {{ tutor[2] }}</p>
+                                <p>Standing: {{ tutor[3] }}</p>
+                                <p>GPA: {{ tutor[4] }}</p>
+                                <p>Self Introduction:{{ tutor[5] }} </p>
+                                <p><a class="btn btn-primary"
+                                      href="{{ url_for("user.user_check_tutor", netid=tutor[0]) }}"
+                                      role="button">Details
+                                    &raquo;</a>
+                                </p>
+                            </div>
+                            <hr/>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div><!--/.sidebar-offcanvas-->
+
+
+        </div>
+
+
+    {% elif g.type == 2 %}
+
+
+        <div class="index_login_pic">
+        </div>
+
+        <div class="row">
+
+            <div class="container">
+                <div class="jumbotron col-lg-6" style="height: 300px;">
+                    <h1>Students</h1>
+                    <p>
+                        Check students' applications
+                    </p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="{{ url_for("tutor.tutor_show_states") }}"
+                           role="button">My
+                            Students</a>
+                    </p>
+                </div>
+                <div class="jumbotron col-lg-6" style="height: 300px;">
+                    <h1>Comments</h1>
+                    <p>
+                        Check comments for you.
+                    </p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="{{ url_for("tutor.tutor_show_comments") }}"
+                           role="button">Comments
+                            On Me</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    {% else %}
+        <div style="width: 100%; height: 800px;">
+            <div style="background-image: url({{ url_for('static', filename='img/tutor2.jpg') }}); background-repeat: no-repeat; background-size: cover; position: absolute; width: 100%; height: 800px;">
+            </div>
+            <div style="width: 100%; height: 100%; padding-top: 180px;">
+                <div style="width: 700px; height: 300px; border-radius: 20px; margin: 0 auto; padding: 30px; background-color: #ffffff; opacity: 0.5;">
+
+                </div>
+            </div>
+            <div style="position: absolute; width: 700px; left: 50%; top: 43%; transform: translate(-50%, -50%);">
+                <div style="text-align: center">
+                    <h1 style="text-align: center; margin-top: 0;  font-weight: bolder; color: #000000">Welcome to UIUC Tutor Online</h1>
+                    <p style="font-size: 30px;">Online tutoring for UIUC students anytime, anywhere.</p>
+                    <p style="text-align: center; margin-top: 20px;"><a class="btn btn-lg btn-success"
+                                                                        href="{{ url_for("user.user_login") }}"
+                                                                        style="display: block; margin: 0 auto; width: 200px"
+                                                                        role="button">Join Us Now!
+                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

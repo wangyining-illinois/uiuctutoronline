@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default col-lg-4" style="padding: 0">
+            <div class="panel-heading">
+                {{ tutor_info[2] }}'s Info
+            </div>
+            <div class="panel-body">
+                <form action="{{ url_for("user.user_apply") }}" method="post">
+                    <div>
+                        <p class="tutor_info">major: {{ tutor_info[3] }}</p>
+                        <p class="tutor_info">selfIntro: {{ tutor_info[4] }}</p>
+                        <p class="tutor_info">grade: {{ tutor_info[5] }}</p>
+                        <p class="tutor_info">gpa: {{ tutor_info[6] }}</p>
+                    </div>
+
+                    <input type="hidden" name="netid" value="{{ tutor_info[0] }}">
+                    <br><br><br><br>
+
+                    {% if is_his_tutor == 1 %}
+                        <h3>He/She is Your Tutor Now.</h3>
+
+                    {% elif is_his_tutor == 2 %}
+                        <h3>You have been declined by {{ tutor_info[2] }} </h3>
+                    {% elif is_his_tutor == 3 %}
+                        <h3>Waiting {{ tutor_info[2] }}'s reply </h3>
+                    {% else %}
+
+                        <button class="btn-lg btn-primary" type="submit">Apply</button>
+                        <br><br><br><br>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="panel panel-default col-lg-7" style="padding: 0">
+            <div class="panel-heading">
+                Comments about {{ tutor_info[2] }}
+            </div>
+            <div class="panel-body">
+                {% if comments %}
+                    {% for comment in comments %}
+                        <div class="media" style="margin-bottom: 20px">
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ comment[0] }} Say: </h4>
+                                {{ comment[1] }}
+                                <br><br>
+                                <p>Ratings:
+                                    {% for i in range(comment[2]) %}
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                    {% endfor %}
+                    {#             {{ comments }}#}
+                {% else %}
+                    <h3>This tutor has no comments now.</h3>
+                {% endif %}
+
+                <hr/>
+            {% if is_his_tutor == 1 %}
+                <div class="add-comment">
+                    <h4>If you know him/her, then you can write a comment to help others judge</h4>
+                    <form action="{{ url_for("user.user_comment") }}" method="post">
+                        <div class="form-group">
+                            <label for="comment">Your comment</label>
+                            <textarea required class="form-control" name="text" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <br/>
+                            <label for="rating">Your Rating</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="rating" id="inlineRadio1" value="1"> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="rating" id="inlineRadio2" value="2"> 2
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="rating" id="inlineRadio3" value="3"> 3
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="rating" id="inlineRadio4" value="4"> 4
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" checked name="rating" id="inlineRadio5" value="5"> 5
+                            </label>
+                        </div>
+                        <input type="hidden" name="tid" value="{{ tutor_info[0] }}">
+                        <button type="submit" class="btn btn-primary">Comment</button>
+                    </form>
+                </div>
+
+                {% else %}
+                    <h4>You can not comment on {{ tutor_info[2] }} because {{ tutor_info[2] }} is not your tutor. </h4>
+            {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}

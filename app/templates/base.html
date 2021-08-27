@@ -1,0 +1,76 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}UIUC Tutor Online</title>
+{#<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">#}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/icheck-bootstrap.min.css') }}">
+
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+
+
+{% block mystyle %}{% endblock %}
+
+<div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 60px; line-height: 60px; padding-top: 5px;">
+        <div class="container">
+            <div id="navbar" class="collapse navbar-collapse" style="line-height: 60px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('user.index') }}">UIUC Tutor Online</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    {% if not g.type %}
+                        <li><a href="{{ url_for('tutor.tutor_register') }}">Tutor Register</a></li>
+                        <li><a href="{{ url_for('tutor.tutor_login') }}">Tutor Log In</a></li>
+                        <li><a href="{{ url_for('user.user_register') }}">User Register</a></li>
+                        <li><a href="{{ url_for('user.user_login') }}">User Log In</a></li>
+                    {% endif %}
+                </ul>
+
+                {# user panel #}
+                {% if g.type == 1 %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ url_for("user.user_show_states") }}">My Tutors</a></li>
+                        <li><a href="{{ url_for('user.user_update') }}">Stu: {{ g.user[2] }}</a></li>
+                        <li><a href="{{ url_for('user.logout') }}">Log Out</a>
+                    </ul>
+                {% endif %}
+
+
+                {% if g.type == 2 %}
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url_for("tutor.tutor_show_comments") }}">My Comments</a></li>
+                        <li><a href="{{ url_for("tutor.tutor_show_states") }}">My Students</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ url_for('tutor.tutor_update') }}">Tutor: {{ g.tutor[2] }}</a></li>
+                        <li><a href="{{ url_for('tutor.logout') }}">Log Out</a>
+                    </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+
+    <div class=" main">
+        <header style="text-align: center">
+            {% block header %}{% endblock %}
+        </header>
+
+        <div>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">@2020 Team50</p>
+    </div>
+</footer>

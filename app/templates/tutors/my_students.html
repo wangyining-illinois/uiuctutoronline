@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="index_login_pic">
+    </div>
+    <div class="container" style="margin-top: 18px;">
+        <div class="row" style="height: 150px">
+            <form action="{{ url_for("tutor.tutor_delete") }}" method="post">
+                <input type="hidden" name="netid" value="{{ netid }}">
+                <button class="btn btn-danger" type="submit">Delete My Account</button>
+            </form>
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">My Students</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Major</th>
+                        <th>Standing</th>
+                        <th>State</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for stu in stus %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ stu[2] }}</td>
+                            <td>{{ stu[3] }}</td>
+                            <td>{{ stu[4] }}</td>
+
+                            {% if stu[5] == 0 %}
+                                <td class="bg-info">
+                                    <form style="display: inline" action="{{ url_for("tutor.tutor_handle_user") }}"
+                                          method="post">
+                                        <input type="hidden" name="id" value="{{ stu[0] }}">
+                                        <input type="hidden" name="op" value="1">
+                                        <button type="submit" class="btn-success">Accept</button>
+                                    </form>
+                                    <form style="display: inline" action="{{ url_for("tutor.tutor_handle_user") }}"
+                                          method="post">
+                                        <input type="hidden" name="id" value="{{ stu[0] }}">
+                                        <input type="hidden" name="op" value="2">
+                                        <button class="btn-danger">Decline</button>
+                                    </form>
+
+                                </td>
+                            {% elif stu[5] == 1 %}
+                                <td class="bg-success">Accepted</td>
+                            {% else %}
+                                <td class="bg-danger">Refused</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

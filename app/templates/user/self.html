@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %} Edit User Info{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container loginform">
+        <form method="post">
+
+            <div class="input-container">
+                <input type="input" readonly="true" name="netid" value="{{ user[1] }}">
+                <label for="netid">Netid (can not modify)</label>
+                <div class="bottom-line"></div>
+            </div>
+
+
+            <div class="input-container">
+                <input type="input" id="uname" name="uname" value="{{ user[2] }}">
+                <label for="uname">Name</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" id="major" name="major" value="{{ user[3] }}">
+                <label for="major">Major</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" id="selfintro" name="selfintro" value="{{ user[4] }}">
+                <label for="selfintro">Self Introduction</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" id="grade" name="grade" value="{{ user[5] }}">
+                <label for="grade">Grade</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" name="password" value="{{ user[6] }}">
+                <label for="password">Password</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <button type="submit" class="submit-button btn btn-default">Modify</button>
+        </form>
+    </div>
+{% endblock %}

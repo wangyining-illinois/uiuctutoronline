@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}User Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container loginform">
+        <form method="post">
+
+            <div class="input-container">
+                <input type="input" required id="netid" name="netid" placeholder="Try to input 'MATH347'">
+                <label for="netid">Netid</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="uname" name="uname" placeholder="Try to input 'MATH347'">
+                <label for="uname">Username</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="password" required id="password" name="password" placeholder="Try to input 'MATH347'">
+                <label for="password">Password</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="major" name="major" placeholder="Try to input 'MATH347'">
+                <label for="major">Major</label>
+                <div class="bottom-line"></div>
+            </div>
+
+
+            {#            <div class="form-group">#}
+            {#                <label for="major">major</label>#}
+            {#                <input class="form-control" required id="major" name="major" placeholder="major">#}
+            {#            </div>#}
+
+            {#            <div class="form-group">#}
+            {#                <label for="password">Password</label>#}
+            {#                <input type="password" required class="form-control" name="password" id="password"#}
+            {#                       placeholder="Password">#}
+            {#            </div>#}
+
+            <div class="input-container">
+                <input type="input" required id="selfintro" name="selfintro" placeholder="Try to input 'MATH347'">
+                <label for="selfintro">Self Introduction</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            {#            <div class="form-group">#}
+            {#                <label for="selfintro">selfintro</label>#}
+            {#                <input class="form-control" required id="selfintro" name="selfintro" placeholder="selfintro">#}
+            {#            </div>#}
+
+            <div class="input-container">
+                <input type="input" required id="grade" name="grade" placeholder="Try to input 'MATH347'">
+                <label for="grade">Standing</label>
+                <div class="bottom-line"></div>
+            </div>
+
+{##}
+{#            <div class="form-group">#}
+{#                <label for="grade">grade</label>#}
+{#                <input class="form-control" required id="grade" name="grade" placeholder="grade">#}
+{#            </div>#}
+
+            <button type="submit" class="submit-button btn btn-primary btn-lg">Register</button>
+        </form>
+    </div>
+{% endblock %}

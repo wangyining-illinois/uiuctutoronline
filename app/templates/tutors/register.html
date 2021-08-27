@@ -1,0 +1,460 @@
+{% extends 'base.html' %}
+
+{% block mystyle %}
+
+{% endblock %}
+
+{% block header %}
+    <h1>{% block title %}Tutor Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container loginform">
+        <form method="post" id="form1">
+            <div class="input-container">
+                <input type="input" required id="netid" name="netid">
+                <label for="netid"> Netid</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="password" required id="password" name="password">
+                <label for="password"> Password</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="tname" name="tname">
+                <label for="tname"> Name</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="major" name="major">
+                <label for="major"> Major</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="selfintro" name="selfintro">
+                <label for="selfintro"> Self Introduction</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="input" required id="gpa" name="gpa">
+                <label for="gpa"> GPA</label>
+                <div class="bottom-line"></div>
+            </div>
+
+            <div class="form-group" style=" width: 600px; margin: 0 auto;">
+                <label for="grade">Standing</label>
+                <div>
+                    <div class="radio form-inline">
+                        <label>
+                            <input type="radio" name="grade" id="grade1" value="Senior" checked>
+                            Senior
+                        </label>
+                    </div>
+                    <div class="radio form-inline">
+                        <label>
+                            <input type="radio" name="grade" id="grade2" value="Junior">
+                            Junior
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="freetime_box">
+                <div style="width: 600px;">
+                    <label for="freetime">Select your free time</label>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline ">
+                            <input type="checkbox" id="mon1" name="m1" value="1" class="time_input"/>
+                            <label for="mon1">Monday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="mon2" name="m2" value="1" class="time_input"/>
+                            <label for="mon2">Monday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="mon3" name="m3" value="1" class="time_input"/>
+                            <label for="mon3">Monday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="tues1" name="t1" value="1" class="time_input"/>
+                            <label for="tues1">Tuesday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="tues2" name="t2" value="1" class="time_input"/>
+                            <label for="tues2">Tuesday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="tues3" name="t3" value="1" class="time_input"/>
+                            <label for="tues3">Tuesday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="wed1" name="w1" value="1" class="time_input"/>
+                            <label for="wed1">Wednesday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="wed2" name="w2" value="1" class="time_input"/>
+                            <label for="wed2">Wednesday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="wed3" name="w3" value="1" class="time_input"/>
+                            <label for="wed3">Wednesday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="Thur1" name="th1" value="1" class="time_input"/>
+                            <label for="Thur1">Thursday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="Thur2" name="th2" value="1" class="time_input"/>
+                            <label for="Thur2">Thursday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="Thur3" name="th3" value="1" class="time_input"/>
+                            <label for="Thur3">Thursday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="fri1" name="f1" value="1" class="time_input"/>
+                            <label for="fri1">Friday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="fri2" name="f2" value="1" class="time_input"/>
+                            <label for="fri2">Friday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="fri3" name="f3" value="1" class="time_input"/>
+                            <label for="fri3">Friday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="sat1" name="s1" value="1" class="time_input"/>
+                            <label for="sat1">Saturday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="sat2" name="s2" value="1" class="time_input"/>
+                            <label for="sat2">Saturday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="sat3" name="s3" value="1" class="time_input"/>
+                            <label for="sat3">Saturday Evening</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="icheck-primary icheck-inline">
+                            <input type="checkbox" id="sun1" name="su1" value="1" class="time_input"/>
+                            <label for="sun1">Sunday Morning</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="sun2" name="su2" value="1" class="time_input"/>
+                            <label for="sun2">Sunday Afternoon</label>
+                        </div>
+
+                        <div class="icheck-primary  icheck-inline ">
+                            <input type="checkbox" id="sun3" name="su3" value="1" class="time_input"/>
+                            <label for="sun3">Sunday Evening</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h4>Verify and become a tutor of a course</h4>
+            <div class="form-group">
+                <label for="course1">Course #1</label>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">CourseName:</span>
+                        <input type="text" class="form-control course-input" required id="course1"
+                               name="course1" onchange="findInspector(1)"
+                               value="math">
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Instructor:</span>
+                        <select type="text" class="form-control course-input" required id="instructor1"
+                                name="instructor1">
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Term:</span>
+                        <select type="text" class="form-control course-input" onchange="findInspector(1)" required id="term1" name="term1">
+                            <option value="2020-sp">2020-sp</option>
+                            <option value="2019-sp">2019-sp</option>
+                            <option value="2019-fa">2019-fa</option>
+                            <option value="2018-sp">2018-sp</option>
+                            <option value="2018-fa">2018-fa</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Grade:</span>
+                        <select type="text" class="form-control course-input" required id="course_grade1"
+                                name="course_grade1">
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box">
+                    <a class="btn btn-primary" style="margin: 0 auto; display: block; width: 100px;"
+                       onclick="verifyCourse(1)">verify</a>
+                </div>
+                <div>
+                    <p class="bg-success" id="course1_pass" style="display: none">Congratulations! You're qualified to tutor this course</p>
+                </div>
+                <div>
+                    <p class="bg-danger" id="course1_not_pass" style="display: none">Sorry! You are not qualified to tutor this course</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="course2">Course #2</label>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">CourseName:</span>
+                        <input type="text" class="form-control course-input" required id="course2"
+                               name="course2" onchange="findInspector(2)"
+                               value="math">
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Instructor:</span>
+                        <select type="text" class="form-control course-input" required id="instructor2"
+                                name="instructor2">
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Term:</span>
+                        <select type="text" class="form-control course-input" required id="term2" onchange="findInspector(2)" name="term2">
+                            <option value="2020-sp">2020-sp</option>
+                            <option value="2019-sp">2019-sp</option>
+                            <option value="2019-fa">2019-fa</option>
+                            <option value="2018-sp">2018-sp</option>
+                            <option value="2018-fa">2018-fa</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Grade:</span>
+                        <select type="text" class="form-control course-input" required id="course_grade2"
+                                name="course_grade2">
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box">
+                    <a class="btn btn-primary" style="margin: 0 auto; display: block; width: 100px;"
+                       onclick="verifyCourse(2)">verify</a>
+                </div>
+                <div>
+                    <p class="bg-success" id="course2_pass" style="display: none">Congratulations! You're qualified to tutor this course</p>
+                </div>
+                <div>
+                    <p class="bg-danger" id="course2_not_pass" style="display: none">Sorry! You are not qualified to tutor this course</p>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="course3">Course #3</label>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">CourseName:</span>
+                        <input type="text" class="form-control course-input" required id="course3"
+                               name="course3" onchange="findInspector(3)"
+                               value="math">
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Instructor:</span>
+                        <select type="text" class="form-control course-input" required id="instructor3"
+                                name="instructor3">
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box container">
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Term:</span>
+                        <select type="text" class="form-control course-input" onchange="findInspector(3)" required
+                                id="term3" name="term3">
+                            <option value="2020-sp">2020-sp</option>
+                            <option value="2019-sp">2019-sp</option>
+                            <option value="2019-fa">2019-fa</option>
+                            <option value="2018-sp">2018-sp</option>
+                            <option value="2018-fa">2018-fa</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <span style="width: 90px; display: inline-block">Grade:</span>
+                        <select type="text" class="form-control course-input" required id="course_grade3"
+                                name="course_grade3">
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="course-box">
+                    <a class="btn btn-primary" style="margin: 0 auto; display: block; width: 100px;"
+                       onclick="verifyCourse(3)">verify</a>
+                </div>
+                <div>
+                    <p class="bg-success" id="course3_pass" style="display: none">Congratulations! You're qualified to tutor this course</p>
+                </div>
+                <div>
+                    <p class="bg-danger" id="course3_not_pass" style="display: none">Sorry! You are not qualified to tutor this course</p>
+                </div>
+
+            </div>
+
+        </form>
+
+        <button type="submit" class="btn btn-default submit-button" onclick="submitForm()">Register</button>
+    </div>
+
+    <script>
+
+        {#  能够成为 courseX 的 tutor，如果不行，这门课的位置就必须留空，否则就不能提交  #}
+        var can_be_tutor = [false, false, false, false]
+
+        function submitForm() {
+            for (var i = 1; i <= 3; i++) {
+                if (!can_be_tutor[i]) {
+                    console.log("Course " + i + "can not be tutor")
+                    $("#course" + i).val("")
+                }
+            }
+            $("#form1").submit()
+        }
+
+        function verifyCourse(courseNum) {
+
+            let netid = $("#netid").val()
+            let term = $("#term" + courseNum).val()
+            let instructor = $("#instructor" + courseNum).val()
+            let course_grade = $("#course_grade" + courseNum).val()
+            let course_name = $("#course" + courseNum).val()
+
+            $.ajax({
+                url: '/tutor/verify',
+                type: 'post',
+                data: {
+                    netid: netid,
+                    term: term,
+                    instructor: instructor,
+                    course_grade: course_grade,
+                    course_name: course_name
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data)
+                    hasDone = true
+                    if (data.success) {
+                        alert("Congraduations! You can be this course's Tutor")
+                        $("#course" + courseNum).css("color", "green")
+                        $("#course" + courseNum + "_pass").css("display", "block")
+                        $("#course" + courseNum + "_not_pass").css("display", "none")
+                        can_be_tutor[courseNum] = true
+                    } else {
+                        alert("Sorry! You can not be this course's Tutor")
+                        $("#course" + courseNum + "_pass").css("display", "none")
+                        $("#course" + courseNum + "_not_pass").css("display", "block")
+                        $("#course" + courseNum).css("color", "red")
+                        can_be_tutor[courseNum] = false
+                    }
+                },
+                error: function (data) {
+                    alert("Your Input Has Error.")
+                    $("#course" + courseNum + "_pass").css("display", "none")
+                    $("#course" + courseNum + "_not_pass").css("display", "block")
+                    $("#course" + courseNum).css("color", "red")
+                }
+            })
+
+        }
+
+        function findInspector(courseNum) {
+            let term = $("#term" + courseNum).val()
+            let course_name = $("#course" + courseNum).val()
+
+            $.ajax({
+                url: '/tutor/findInspector',
+                type: 'get',
+                data: {
+                    term: term,
+                    coursename: course_name
+                },
+                success: function (data) {
+                    console.log(data)
+                    $("#instructor"+courseNum).empty()
+                    for (let i = 0; i < data.length; i++) {
+                        let name = data[i]
+                        $("#instructor"+courseNum).append(`<option value="${name}"> ${name} </option>`)
+                    }
+                },
+                error: function (data) {
+                    console.log(data)
+                }
+            })
+        }
+
+    </script>
+
+{% endblock %}
